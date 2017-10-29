@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Neural Netwrok</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.1.3/synaptic.js"></script>
+</head>
+
+<body>
+    <h1> Evolving static MLP using an EA to find the best set of weights F21BC Biologically Inspired Computation Created by:-
+        MHD Rateb Alissa 2017
+    </h1>
+    <form>
+        <label for="number-population-size">Population size:</label><br>
+        <input class="form-control" type="number" value="" id="populationSize"><br>
+        <label for="number-tournament-Size">tournament Size:</label><br>
+        <input type="number" class="form-control" id="tournamentSize" ><br>
+        <label for="number-mutation-Rate">mutation Rate:</label><br>
+        <input class="form-control" type="number"  value="" id="mutationRate"><br>
+        <label for="Number-of-generation">Number of generation:</label><br>
+        <input class="form-control" type="number" value="" id="EAiterations"><br>
+        <br>
+         <button onclick="setParameter(event)" type="submit" class="btn btn-primary">Submit</button>
+     </form>
+
+     <div id="result"></div>
+     <div id="result2"></div>
+
+    <script type="text/javascript">
+    var counter=0
+        function setParameter(event) {
+            counter+=1;
+            population = [];
+            console.clear();
+            event.preventDefault();  
+          
+        var popSize = document.querySelector('#populationSize');
+        var TouSize = document.querySelector('#tournamentSize');
+        var mutRate = document.querySelector('#mutationRate');
+        var geneNum = document.querySelector('#EAiterations');
+         result = document.querySelector('#result');
+         result2 = document.querySelector('#result2');
+        results = document.createElement("p");
+        results2 = document.createElement("p");
+
+
+        populationSize=popSize.value;
+        tournamentSize=TouSize.value;
+        mutationRate=mutRate.value;
+        EAiterations=geneNum.value;
+            main();
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="NN.js"></script>
+
+</body>
+
+</html>
